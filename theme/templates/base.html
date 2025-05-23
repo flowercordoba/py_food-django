@@ -2,37 +2,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Django Tailwind</title>
+    <title>FoodOnline</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     {% tailwind_css %}
   </head>
-
   <body class="bg-gray-50 font-sans leading-normal tracking-normal">
 
-    <div class="container mx-auto px-4">
-      <!-- Hero Section -->
-      <section class="flex flex-col items-center justify-center h-screen space-y-6">
-        <h1 class="text-5xl font-bold text-indigo-600">
-          Django + Tailwind = ❤️
-        </h1>
+    {% include "partials/header.html" %}
+    {% block content %}{% endblock %}
+    {% include "partials/footer.html" %}
+    {% include "partials/login_modal.html" %}
+	{% include "partials/register_modal.html" %}
 
-        <p class="text-lg text-gray-700">¡Tailwind está funcionando si ves estos estilos!</p>
+    <script>
+      function toggleLoginModal() {
+        const modal = document.getElementById("loginModal");
+        modal.classList.toggle("hidden");
+      }
+    </script>
 
-        <button class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition">
-          ¡Haz clic aquí!
-        </button>
+	<script>
+  function toggleLoginModal() {
+    document.getElementById("loginModal").classList.toggle("hidden");
+  }
 
-        <div class="grid grid-cols-5 gap-4 w-full mt-10">
-          <div class="h-16 bg-red-500"></div>
-          <div class="h-16 bg-blue-500"></div>
-          <div class="h-16 bg-green-500"></div>
-          <div class="h-16 bg-yellow-400"></div>
-          <div class="h-16 bg-purple-600"></div>
-        </div>
-      </section>
-    </div>
+  function toggleRegisterModal() {
+    document.getElementById("registerModal").classList.toggle("hidden");
+  }
+</script>
 
   </body>
 </html>

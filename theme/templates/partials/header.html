@@ -1,0 +1,48 @@
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="text-xl font-bold text-indigo-600">FoodOnline</div>
+
+    <!-- Menú -->
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#" class="text-gray-600 hover:text-indigo-600">Inicio</a>
+      <a href="#" class="text-gray-600 hover:text-indigo-600">Restaurantes</a>
+      <a href="#" class="text-gray-600 hover:text-indigo-600">Ofertas</a>
+
+      <!-- Mega menú -->
+      <div class="relative group">
+        <button class="text-gray-600 hover:text-indigo-600 flex items-center">
+          Categorías
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute top-full mt-2 w-56 bg-white shadow-md border rounded-md hidden group-hover:block z-50">
+          <ul class="p-4 space-y-2 text-sm text-gray-700">
+            <li class="hover:text-indigo-600"><a href="#">🍕 Pizza</a></li>
+            <li class="hover:text-indigo-600"><a href="#">🍔 Burgers</a></li>
+            <li class="hover:text-indigo-600"><a href="#">🥗 Ensaladas</a></li>
+            <li class="hover:text-indigo-600"><a href="#">☕ Bebidas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Botón login -->
+    <div class="hidden md:block">
+      <button onclick="toggleLoginModal()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+        Login / Registrarse
+      </button>
+    </div>
+
+    <!-- Menú móvil (pendiente si lo necesitas más adelante) -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
