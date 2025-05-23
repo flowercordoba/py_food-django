@@ -1,0 +1,37 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FoodOnline</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% tailwind_css %}
+  </head>
+  <body class="bg-gray-50 font-sans leading-normal tracking-normal">
+
+    {% include "partials/header.html" %}
+    {% block content %}{% endblock %}
+    {% include "partials/footer.html" %}
+    {% include "partials/login_modal.html" %}
+	{% include "partials/register_modal.html" %}
+
+    <script>
+      function toggleLoginModal() {
+        const modal = document.getElementById("loginModal");
+        modal.classList.toggle("hidden");
+      }
+    </script>
+
+	<script>
+  function toggleLoginModal() {
+    document.getElementById("loginModal").classList.toggle("hidden");
+  }
+
+  function toggleRegisterModal() {
+    document.getElementById("registerModal").classList.toggle("hidden");
+  }
+</script>
+
+  </body>
+</html>
